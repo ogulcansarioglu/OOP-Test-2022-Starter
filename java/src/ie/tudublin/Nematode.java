@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.data.TableRow;
+import processing.core.PApplet;
 
 public class Nematode {
 
@@ -57,5 +58,9 @@ public class Nematode {
         this.eyes = eyes;
     }
 
+    public void render()
+    {
+        
+    }
     
 }
