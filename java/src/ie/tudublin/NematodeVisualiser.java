@@ -18,6 +18,8 @@ public class NematodeVisualiser extends PApplet
 
 	public void keyPressed()
 	{		
+		
+		
 		if (keyCode == LEFT)
 		{
 			index++;
@@ -33,7 +35,28 @@ public class NematodeVisualiser extends PApplet
 				index = 0;
 			}
 		}
+
+		//if pressed R, a random nematode is given
+
+		if (key == 'r' || key == 'R') {
+
+			System.out.println("pressed");
+
+			index = (int) random(nematodes.size()-1);
+
+		}
 			
+	}
+
+	public void mousePressed() {
+
+		index++;
+		System.out.println("Printing");
+		//error checking code
+		if (index == nematodes.size()) {
+			index = 0;
+		}
+
 	}
 
 
@@ -106,7 +129,7 @@ public class NematodeVisualiser extends PApplet
 		
 			if(nematodes.get(i).getGender().equals("m")) 
 			{
-				System.out.println(nematodes.get(i).getGender());
+				
 				if (i == nematodes.get(index).getLength() -1) {
 					fill(255);
 					
