@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import processing.data.TableRow;
+
 public class Nematode {
 
     private String name;
@@ -7,7 +9,23 @@ public class Nematode {
     private boolean limbs;
     private String gender;
     private boolean eyes;
-    
+
+    public Nematode(TableRow row) 
+    {
+        name = row.getString("name");
+        length = row.getInt("length");
+        limbs = row.getInt("lims") == 1;
+        gender = row.getString("gender");
+        eyes = row.getInt("eyes") == 1;
+    }
+
+    public Nematode(String name, int length, boolean limbs, String gender, boolean eyes) {
+        this.name = name;
+        this.length = length;
+        this.limbs = limbs;
+        this.gender = gender;
+        this.eyes = eyes;
+    }
     public String getName() {
         return name;
     }
