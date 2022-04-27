@@ -87,6 +87,7 @@ public class NematodeVisualiser extends PApplet
 		textAlign(CENTER);
 		textSize(20);
 		text(nematodes.get(index).getName(), width/2,  height/2 - height/3);
+		fill(map(1, 0, nematodes.get(index).getLength(), 0, 255), 255, 255);
 		
 
 		for(int i = 0; i < nematodes.get(index).getLength(); i++) {
@@ -95,6 +96,34 @@ public class NematodeVisualiser extends PApplet
 			noFill();
 
 			circle(width/2, height/2 + x, 100);
+			//if has limbs
+			if(nematodes.get(i).isLimbs()) {
+				line(width/2 + 50, height/2 + x, width/2 + 100, height/2 + x);
+				line(width/2 - 50, height/2 + x, width/2 - 100, height/2 + x);
+			}
+
+			
+		
+			if(nematodes.get(i).getGender().equals("m")) 
+			{
+				System.out.println(nematodes.get(i).getGender());
+				if (i == nematodes.get(index).getLength() -1) {
+					fill(HSB);
+					
+					stroke(255,0,225);
+					line(width/2, height/2 + x + 50 , width/2, height/2 + x + 100);
+					circle(width/2, height/2 + x + 110, 20);
+					
+				}
+
+			} else if (nematodes.get(i).getGender().equals("f")){
+
+			} else if (nematodes.get(i).getGender().equals("h")) {
+
+			}
+			else {
+
+			}
 
 			
 		
@@ -105,12 +134,17 @@ public class NematodeVisualiser extends PApplet
 				circle(width/2 * 0.7f, height/2 +x - 80, 20);
 				line(width/2 + 50, height/2 +x - 20, width/2 * 1.3f, height/2 +x -80);
 				circle(width/2 * 1.3f, height/2 +x - 80, 20);
+					if(nematodes.get(i).isLimbs()) {
+				
+			}
 		
 			
 			}
 
+		
+
 			if(i == nematodes.get(index).getLength()-1) {
-				print("sh");
+				
 				
 			}
 		}
