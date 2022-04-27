@@ -71,7 +71,8 @@ public class NematodeVisualiser extends PApplet
 		background(0);
 		smooth();
 		loadNematodes();
-		border = width * 0.1f;				
+		border = width * 0.1f;	
+		printNematode();			
 	}
 	
 
@@ -82,6 +83,13 @@ public class NematodeVisualiser extends PApplet
 		{
 			Nematode nm = new Nematode(r);
 			nematodes.add(nm);
+		}
+	}
+
+	public void printNematode() 
+	{
+		for(Nematode n: nematodes) {
+			System.out.println(n);
 		}
 	}
 
@@ -110,7 +118,7 @@ public class NematodeVisualiser extends PApplet
 		textAlign(CENTER);
 		textSize(20);
 		text(nematodes.get(index).getName(), width/2,  height/2 - height/3);
-		fill(map(1, 0, nematodes.get(index).getLength(), 0, 255), 255, 255);
+		fill(map(1, index, 255, 0, 255), 255, 255);
 		
 
 		for(int i = 0; i < nematodes.get(index).getLength(); i++) {
@@ -182,19 +190,11 @@ public class NematodeVisualiser extends PApplet
 				circle(width/2 * 0.7f, height/2 +x - 80, 20);
 				line(width/2 + 50, height/2 +x - 20, width/2 * 1.3f, height/2 +x -80);
 				circle(width/2 * 1.3f, height/2 +x - 80, 20);
-					if(nematodes.get(i).isLimbs()) {
-				
-			}
 		
 			
 			}
 
 		
-
-			if(i == nematodes.get(index).getLength()-1) {
-				
-				
-			}
 		}
 
 

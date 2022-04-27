@@ -11,6 +11,14 @@ public class Nematode {
     private String gender;
     private boolean eyes;
 
+    
+
+    @Override
+    public String toString() {
+        return "Nematode [eyes=" + eyes + ", gender=" + gender + ", length=" + length + ", limbs=" + limbs + ", name="
+                + name + "]";
+    }
+
     public Nematode(TableRow row) 
     {
         name = row.getString("name");
