@@ -108,7 +108,7 @@ public class NematodeVisualiser extends PApplet
 			{
 				System.out.println(nematodes.get(i).getGender());
 				if (i == nematodes.get(index).getLength() -1) {
-					fill(HSB);
+					fill(255);
 					
 					stroke(255,0,225);
 					line(width/2, height/2 + x + 50 , width/2, height/2 + x + 100);
@@ -118,11 +118,35 @@ public class NematodeVisualiser extends PApplet
 
 			} else if (nematodes.get(i).getGender().equals("f")){
 
+				if (i == nematodes.get(index).getLength() -1) {
+				
+					strokeWeight(10);
+					stroke(255,0,225);
+					noFill();
+					circle(width/2, height/2 + x, 50);
+					
+				}
+
 			} else if (nematodes.get(i).getGender().equals("h")) {
+
+				if (i == nematodes.get(index).getLength() -1) {
+					fill(255);
+					
+					stroke(255,0,225);
+					line(width/2, height/2 + x + 50 , width/2, height/2 + x + 100);
+					circle(width/2, height/2 + x + 110, 20);
+					strokeWeight(10);
+					stroke(255,0,225);
+					noFill();
+					circle(width/2, height/2 + x, 50);
+						
+					
+					
+				}
 
 			}
 			else {
-
+					//nothing drawn
 			}
 
 			
@@ -130,6 +154,7 @@ public class NematodeVisualiser extends PApplet
 			if (nematodes.get(index).isEyes() && i == 0) {
 				fill(255);
 				stroke(255,0,225);
+				strokeWeight(8);
 				line(width/2 - 50, height/2 +x + -20, width/2 * 0.7f, height/2 +x - 80);
 				circle(width/2 * 0.7f, height/2 +x - 80, 20);
 				line(width/2 + 50, height/2 +x - 20, width/2 * 1.3f, height/2 +x -80);
