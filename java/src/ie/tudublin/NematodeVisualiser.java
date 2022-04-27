@@ -16,6 +16,7 @@ public class NematodeVisualiser extends PApplet
 	public boolean hasEyes = true;
 
 
+
 	public void keyPressed()
 	{		
 		
@@ -97,6 +98,7 @@ public class NematodeVisualiser extends PApplet
 	public void draw()
 	{
 		background(0);
+		fill(map(1, 0 , mouseX, 255, mouseY));
 		stroke(255,0,225);
 		line(border, height/2, border + 200, height/2);
 		fill(255);
@@ -117,8 +119,9 @@ public class NematodeVisualiser extends PApplet
 		fill(255);
 		textAlign(CENTER);
 		textSize(20);
+		fill(map(0, nematodes.size(), 255, 0, 255), 255, 255);
 		text(nematodes.get(index).getName(), width/2,  height/2 - height/3);
-		fill(map(1, index, 255, 0, 255), 255, 255);
+		
 		
 
 		for(int i = 0; i < nematodes.get(index).getLength(); i++) {
